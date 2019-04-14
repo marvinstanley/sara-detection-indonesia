@@ -12,8 +12,9 @@
 # University of Indonesia
 #################################################
 
-# Custom by Stanley Marvin
+# Customized by Stanley Marvin
 #################################################
+# Added the ability to:
 # 4. enhancing the conversion from slang-words
 # into formal-words
 # 5. remove symbols
@@ -59,7 +60,7 @@ class Normalizer(object):
       return ' '.join(arrStr)
 
    def enhancedFormalize(self, word):
-      # custom By Stanley Marvin
+      # customized By Stanley Marvin
       formalize_word_1 = ["([a-z0-9]+)ny$", "([a-z0-9]+)nk$", "([a-z0-9]+)dh$"]
       result_1 = ["nya", "ng", "t"]
 
@@ -111,7 +112,7 @@ class Normalizer(object):
       return word
          
    def removeSymbols(self,word):
-      # custom By Stanley Marvin
+      # customized By Stanley Marvin
       word = re.sub("[.,:;!-?\"\'()0-9*]+", "", word)
       return word
    
@@ -123,7 +124,7 @@ class Normalizer(object):
       
 	   # url removal
       newTweet = filter(lambda x:'https://' not in x, newTweet)
-      newTweet = filter(lambda x:'@' not in x, newTweet) # I figured that a user mention isn't necassery for the data - Stanley Marvin
+      newTweet = filter(lambda x:'@' not in x, newTweet) # I figured that a user mention isn't necassery for the data -Stanley Marvin
 
       newTweet = map(lambda x:self.enhancedFormalize(x), newTweet)
       newTweet = map(lambda x:self.removeSymbols(x), newTweet)
