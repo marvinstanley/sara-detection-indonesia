@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath("lib/"))
-from normalizer import Normalizer
+from normalizer-customized import Normalizer
 import re
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
